@@ -51,6 +51,5 @@ main = do
     when exists (removeFile dbFile)
     runDB $ do
         runMigration migrateAll
-
         insert $ User "secure_token"
     warp 3000 TokenApp
